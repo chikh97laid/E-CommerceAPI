@@ -32,6 +32,12 @@ dotnet ef database update
 5️⃣ Run the API:
 dotnet run
 
+## 🤝 Collaboration
+This API is open for Frontend Developers who want to practice integration.
+
+If you build a frontend (React / Angular / Vue) for this project,
+feel free to share it in the Issues or tag me — I’d love to see it!
+
 Chikh Oulad Laid
 Backend Developer — ASP.NET Core
 [LinkedIn](www.linkedin.com/in/chikh-oulad-laid-534855337) | [GitHub](https://github.com/chikolaid6-cell)
