@@ -156,7 +156,7 @@ namespace OnlineStore.Services.Implementations
             {
                 return ServiceResult<OrderReadDto?>.Fail(validationError);
             }
-
+            // if there is a double item in dto
             dto.Items = dto.Items
                 .GroupBy(x => x.ItemId)
                 .Select(g => new OrderItemWriteDto()  
