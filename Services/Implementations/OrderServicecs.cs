@@ -226,7 +226,18 @@ namespace OnlineStore.Services.Implementations
             order.OrderStatus = enOrderStatus.Cancelled;
             await _orderRepo.SaveAsync();
 
-            return ServiceResult<OrderReadDto?>.Ok(_mapper.Map<OrderReadDto>(order));
+            var orderReaddto = _mapper.Map<OrderReadDto>(order);
+            orderReaddto.Items = order!.OrderItems.Select(oi => new OrderItemReadDto()
+            {
+                ItemId = oi.ItemId,
+                ItemName = oi.Item.Name,
+                Quantity = oi.Quentity,
+                Price = oi.Price
+            }).ToList();
+
+            orderReaddto.Total = order.OrderItems.Sum(oi => oi.Quentity * oi.Price);
+
+            return ServiceResult<OrderReadDto?>.Ok(orderReaddto);
         }
 
         public async Task<bool> DeleteAsync(int id)
