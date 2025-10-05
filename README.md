@@ -1,9 +1,9 @@
-# 🛍️ Online Store API
+# Online Store API
 
 This is a full-featured **ASP.NET Core Web API** project for managing an online store.
 It demonstrates clean architecture, separation of concerns, and modern backend development practices.
 ---
-## 🚀 Features
+## Features
 - JWT Authentication and Role-based Authorization
 - Product, Category, and Order management
 - Validation and error handling with `ServiceResult`
@@ -11,10 +11,10 @@ It demonstrates clean architecture, separation of concerns, and modern backend d
 - Dependency Injection
 - DTOs and layered architecture
 ---
-## 🧰 Technologies Used
+## Technologies Used
 - ASP.NET Core 8 | Entity Framework Core | SQL Server | AutoMapper | FluentValidation | JWT Authentication
 ---
-## 🧪 How to Run Locally
+## How to Run Locally
 ### 1️⃣ Download the Project:
 You can either **clone** or **download it manually**:
 - **Option 1 (recommended):**  
@@ -32,7 +32,7 @@ dotnet ef database update
 5️⃣ Run the API:
 dotnet run
 
-## 🤝 Collaboration
+## Collaboration
 This API is open for Frontend Developers who want to practice integration.
 
 If you build a frontend (React / Angular / Vue) for this project,
