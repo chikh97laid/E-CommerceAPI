@@ -23,7 +23,7 @@ namespace OnlineStore.Profiles
             CreateMap<Customer, CustomerReadDto>();
             CreateMap<CustomerWriteDto, Customer>();
 
-            CreateMap<Item, ItemReadDto>();
+            CreateMap<Item, ItemReadDto>().ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => $"/api/items/{src.Id}/image"));
             CreateMap<ItemWriteDto, Item>().ForMember(des => des.Image, opt => opt.Ignore());
 
             CreateMap<Order, OrderReadDto>();

@@ -46,7 +46,7 @@ namespace OnlineStore.Controllers
         {
             var result = await _itemService.GetItemImageAsync(id);
 
-            return result != null ? File(result, "image/png") : NotFound("Not Found!");
+            return result != null ? File(result, "image/png") : NotFound("Image Not Found!");
         }
 
         [HttpPost]
