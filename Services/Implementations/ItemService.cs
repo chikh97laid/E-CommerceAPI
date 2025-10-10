@@ -67,7 +67,7 @@ namespace OnlineStore.Services.Implementations
             await _itemRepo.SaveAsync();
 
             var itemReadDto = _mapper.Map<ItemReadDto>(item);
-            itemReadDto.ImageUrl = $"/api/items/{item.Id}/image"; // this to call the end point GetItemImage
+            //itemReadDto.ImageUrl = $"/api/items/{item.Id}/image"; // this to call the end point GetItemImage
 
             return ServiceResult<ItemReadDto?>.Ok(itemReadDto);
         }
@@ -96,7 +96,7 @@ namespace OnlineStore.Services.Implementations
             await _itemRepo.SaveAsync();
 
             var itemReadDto = _mapper.Map<ItemReadDto>(item);
-            itemReadDto.ImageUrl = $"/api/items/{item.Id}/image"; // this to call the end point GetItemImage
+            //itemReadDto.ImageUrl = $"/api/items/{item.Id}/image"; // this to call the end point GetItemImage
 
             return ServiceResult<ItemReadDto?>.Ok(itemReadDto);
         }

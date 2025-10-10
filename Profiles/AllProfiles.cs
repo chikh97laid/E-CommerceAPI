@@ -22,9 +22,9 @@ namespace OnlineStore.Profiles
 
             CreateMap<Customer, CustomerReadDto>();
             CreateMap<CustomerWriteDto, Customer>();
-
+                                                            
             CreateMap<Item, ItemReadDto>().ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => $"/api/items/{src.Id}/image"));
-            CreateMap<ItemWriteDto, Item>().ForMember(des => des.Image, opt => opt.Ignore());
+            CreateMap<ItemWriteDto, Item>().ForMember(des => des.Image, opt => opt.Ignore()); // (because image in formfile in dto, and in byte[] in model)
 
             CreateMap<Order, OrderReadDto>();
             CreateMap<OrderWriteDto, Order>();
