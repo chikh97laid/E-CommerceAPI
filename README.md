@@ -40,4 +40,4 @@ feel free to share it in the Issues or tag me — I’d love to see it!
 
 Chikh Oulad Laid
 Backend Developer — ASP.NET Core
-[LinkedIn](www.linkedin.com/in/chikh-oulad-laid-534855337) | [GitHub](https://github.com/chikolaid6-cell)
+[LinkedIn](www.linkedin.com/in/chikhouladlaid) | [GitHub](https://github.com/chikolaid6-cell)
