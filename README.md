@@ -12,7 +12,7 @@ It demonstrates clean architecture, separation of concerns, and modern backend d
 - DTOs and layered architecture
 ---
 ## Technologies Used
-- ASP.NET Core 8 | Entity Framework Core | SQL Server | AutoMapper | FluentValidation | JWT Authentication
+- ASP.NET Core 8 | Entity Framework Core | SQL Server | AutoMapper | JWT Authentication
 ---
 ## How to Run Locally
 ### 1️⃣ Download the Project:
