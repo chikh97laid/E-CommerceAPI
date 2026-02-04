@@ -1,3 +1,4 @@
+
 ## Online Store API
 A production-style backend API for managing an online store, designed to simulate real-world e-commerce challenges such as secure authentication, data consistency during financial operations, scalable architecture, and maintainable business logic.
 This project focuses on building a reliable and extensible backend system while applying modern software engineering practices and clean architectural patterns.
