@@ -11,10 +11,12 @@ This project was built to solve real backend challenges commonly found in produc
 - Preventing inconsistent or corrupted data during transactional operations
 - Maintaining scalable and testable backend architecture
 - Providing unified and predictable API responses for frontend integration
+
 ---
 ## Key Challenges & Solutions
 Challenge: Managing many-to-many relationships in orders.
 Solution: Optimized EF Core fluent API configurations and used eager loading to prevent N+1 query issues.
+
 ---
 ## What I Learned From This Project
 - Designing scalable backend architectures
@@ -24,6 +26,7 @@ Solution: Optimized EF Core fluent API configurations and used eager loading to 
 - Structuring service layers for maintainability
 - Designing consistent API response contracts
 - Managing relational database integrity using EF Core
+
 ---
 ## Layers Overview
 <p align="center">
