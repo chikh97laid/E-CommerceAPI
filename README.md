@@ -13,11 +13,6 @@ This project was built to solve real backend challenges commonly found in produc
 - Providing unified and predictable API responses for frontend integration
 
 ---
-## Key Challenges & Solutions
-Challenge: Managing many-to-many relationships in orders.
-Solution: Optimized EF Core fluent API configurations and used eager loading to prevent N+1 query issues.
-
----
 ## What I Learned From This Project
 - Designing scalable backend architectures
 - Handling transactional business workflows
@@ -25,7 +20,7 @@ Solution: Optimized EF Core fluent API configurations and used eager loading to 
 - Building secure authentication systems using JWT
 - Structuring service layers for maintainability
 - Designing consistent API response contracts
-- Managing relational database integrity using EF Core
+- Managing many-to-many relationships by optimizing EF Core Fluent API and using Eager Loading to prevent N+1 query issues.
 
 ---
 ## Layers Overview
@@ -40,7 +35,7 @@ Solution: Optimized EF Core fluent API configurations and used eager loading to 
 - Validation and error handling with `ServiceResult`
 - Entity Framework Core + SQL Server
 - Dependency Injection
-- layered architecture
+- Layered architecture
 ---
 ## Technologies Used
 - ASP.NET Core 8 | Entity Framework Core | SQL Server | AutoMapper | JWT Authentication
