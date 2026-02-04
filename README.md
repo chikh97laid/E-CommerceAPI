@@ -1,7 +1,31 @@
-# Online Store API
+## Online Store API
 
-This is a full-featured **ASP.NET Core Web API** project for managing an online store.
-It demonstrates clean architecture, separation of concerns, and modern backend development practices.
+A production-style backend API for managing an online store, designed to simulate real-world e-commerce challenges such as secure authentication, data consistency during financial operations, scalable architecture, and maintainable business logic.
+This project focuses on building a reliable and extensible backend system while applying modern software engineering practices and clean architectural patterns.
+---
+## Project Purpose
+Most beginner e-commerce projects focus only on CRUD operations.
+This project was built to solve real backend challenges commonly found in production systems:
+- Managing secure user authentication and authorization
+- Handling complex business workflows such as order processing and payments
+- Preventing inconsistent or corrupted data during transactional operations
+- Maintaining scalable and testable backend architecture
+- Providing unified and predictable API responses for frontend integration
+---
+## What I Learned From This Project
+- Designing scalable backend architectures
+- Handling transactional business workflows
+- Applying clean code and separation of concerns
+- Building secure authentication systems using JWT
+- Structuring service layers for maintainability
+- Designing consistent API response contracts
+- Managing relational database integrity using EF Core
+---
+## Layers Overview
+<p align="center">
+  <img src="archet.png" width="500" />
+</p>
+
 ---
 ## Features
 - JWT Authentication and Role-based Authorization
@@ -36,12 +60,6 @@ Copy from appsettings.example.json and set your connection string and JWT key.
 dotnet ef database update
 5️⃣ Run the API:
 dotnet run
-
-## Collaboration
-This API is open for Frontend Developers who want to practice integration.
-
-If you build a frontend (React / Angular / Vue) for this project,
-feel free to share it in the Issues or tag me — I’d love to see it!
 
 Chikh Oulad Laid
 Backend Developer — ASP.NET Core
