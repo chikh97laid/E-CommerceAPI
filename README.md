@@ -1,5 +1,4 @@
 ## Online Store API
-
 A production-style backend API for managing an online store, designed to simulate real-world e-commerce challenges such as secure authentication, data consistency during financial operations, scalable architecture, and maintainable business logic.
 This project focuses on building a reliable and extensible backend system while applying modern software engineering practices and clean architectural patterns.
 ---
@@ -52,13 +51,13 @@ You can either **clone** or **download it manually**:
   git clone https://github.com/chikolaid6-cell/E-CommerceAPI.git
 Option 2:
 Click Code → Download ZIP, then extract it.
-2️⃣ Navigate to the Project Folder:
+### 2️⃣ Navigate to the Project Folder:
 cd E-CommerceAPI
-3️⃣ Create or Update appsettings.json:
+### 3️⃣ Create or Update appsettings.json:
 Copy from appsettings.example.json and set your connection string and JWT key.
-4️⃣ Apply Database Migrations:
+### 4️⃣ Apply Database Migrations:
 dotnet ef database update
-5️⃣ Run the API:
+### 5️⃣ Run the API:
 dotnet run
 
 Chikh Oulad Laid
