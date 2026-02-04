@@ -12,6 +12,10 @@ This project was built to solve real backend challenges commonly found in produc
 - Maintaining scalable and testable backend architecture
 - Providing unified and predictable API responses for frontend integration
 ---
+## Key Challenges & Solutions
+Challenge: Managing many-to-many relationships in orders.
+Solution: Optimized EF Core fluent API configurations and used eager loading to prevent N+1 query issues.
+---
 ## What I Learned From This Project
 - Designing scalable backend architectures
 - Handling transactional business workflows
@@ -29,11 +33,11 @@ This project was built to solve real backend challenges commonly found in produc
 ---
 ## Features
 - JWT Authentication and Role-based Authorization
-- Product, Category, and Order management
+- Decoupled Product & Category management using DTOs to prevent over-posting and data exposure.
 - Validation and error handling with `ServiceResult`
 - Entity Framework Core + SQL Server
 - Dependency Injection
-- DTOs and layered architecture
+- layered architecture
 ---
 ## Technologies Used
 - ASP.NET Core 8 | Entity Framework Core | SQL Server | AutoMapper | JWT Authentication
