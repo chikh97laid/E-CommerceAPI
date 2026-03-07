@@ -27,6 +27,11 @@ This project was built to solve real backend challenges commonly found in produc
 <p align="center">
   <img src="archet.png" width="500" />
 </p>
+---
+
+## Database Schema
+
+![Database Schema](storeDatabaseSchema.png)
 
 ---
 ## Features
