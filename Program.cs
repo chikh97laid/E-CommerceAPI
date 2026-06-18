@@ -4,15 +4,12 @@ using OnlineStore.Data;
 using OnlineStore.Extensions;
 using OnlineStore.Models;
 using OnlineStore.Profiles;
-using System.Reflection;
 using AutoMapper;
 using OnlineStore.Dtos.Category;
 using OnlineStore.Services.Implementations;
 using OnlineStore.Services.Interfaces;
 using OnlineStore.Dtos.Review;
-using System.Text.Json.Serialization;
 using OnlineStore.Dtos.Customer;
-using OnlineStore.Dtos.Shipping;
 using OnlineStore.Repository.Interfaces;
 using OnlineStore.Repository.Implementations;
 
