@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using OnlineStore.Dtos;
 using OnlineStore.Dtos.Payment;
-using OnlineStore.Migrations;
 using OnlineStore.Models;
 using OnlineStore.Repository.Interfaces;
 using OnlineStore.Services.Interfaces;
