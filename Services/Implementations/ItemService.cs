@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using OnlineStore.Dtos.Category;
 using OnlineStore.Dtos.Item;
 using OnlineStore.Models;
 using OnlineStore.Repository.Interfaces;
 using OnlineStore.Services.Interfaces;
 using OnlineStore.Services.Results;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace OnlineStore.Services.Implementations
 {

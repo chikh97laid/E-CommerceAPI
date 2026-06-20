@@ -1,15 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using OnlineStore.Dtos.Category;
 using OnlineStore.Dtos.Item;
-using OnlineStore.Models;
-using OnlineStore.Repository;
 using OnlineStore.Services.Interfaces;
-using System.IO;
-using System.Security.Cryptography;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace OnlineStore.Controllers
 {
@@ -28,6 +21,7 @@ namespace OnlineStore.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetItems()
         {
             var result = await _itemService.GetAllAsync();
@@ -35,6 +29,7 @@ namespace OnlineStore.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetItemById(int id)
         {
             var result = await _itemService.GetByIdAsync(id);

@@ -1,18 +1,7 @@
-﻿using Azure;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using OnlineStore.Data;
-using OnlineStore.Models;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using OnlineStore.Repository;
-using OnlineStore.Dtos;
 using OnlineStore.Dtos.Category;
-using AutoMapper;
 using OnlineStore.Services.Interfaces;
-using OnlineStore.Services.Implementations;
 
 namespace OnlineStore.Controllers
 {
