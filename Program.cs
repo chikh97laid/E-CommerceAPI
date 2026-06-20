@@ -4,15 +4,12 @@ using OnlineStore.Data;
 using OnlineStore.Extensions;
 using OnlineStore.Models;
 using OnlineStore.Profiles;
-using System.Reflection;
 using AutoMapper;
 using OnlineStore.Dtos.Category;
 using OnlineStore.Services.Implementations;
 using OnlineStore.Services.Interfaces;
 using OnlineStore.Dtos.Review;
-using System.Text.Json.Serialization;
 using OnlineStore.Dtos.Customer;
-using OnlineStore.Dtos.Shipping;
 using OnlineStore.Repository.Interfaces;
 using OnlineStore.Repository.Implementations;
 
@@ -74,12 +71,22 @@ builder.Services.AddCustomJWTAuth(builder.Configuration);
 
 var app = builder.Build();
 
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// اترك هذه الدالتين بدون شرط ليفتح السويغر على السيرفر الخارجي
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Online Store API V1");
+    // هذا السطر اختياري: يجعل السويغر يفتح مباشرة بمجرد كتابة رابط الموقع بدون الحاجة لكتابة /swagger
+    c.RoutePrefix = string.Empty;
+});
 
 app.UseHttpsRedirection();
 
@@ -89,4 +96,59 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+// --- كود تهيئة قاعدة البيانات وإنشاء الـ Admin والرول تلقائياً ---
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+
+        // 1. تطبيق الـ Migrations تلقائياً
+        context.Database.Migrate();
+
+        // جلب مدير الصلاحيات ومدير المستخدمين من الـ Dependency Injection
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = services.GetRequiredService<UserManager<AppUser>>();
+
+        // 2. إنشاء رول Admin إذا لم تكن موجودة
+        string roleName = "Admin";
+        if (!await roleManager.RoleExistsAsync(roleName))
+        {
+            await roleManager.CreateAsync(new IdentityRole(roleName));
+        }
+
+        // 3. إنشاء مستخدم Admin إذا لم يكن موجوداً
+        string adminEmail = "admin@store.com"; // يمكنك تغيير الإيميل هنا
+        var adminUser = await userManager.FindByEmailAsync(adminEmail);
+
+        if (adminUser == null)
+        {
+            var newAdmin = new AppUser
+            {
+                UserName = "Admin",
+                Email = adminEmail,
+                EmailConfirmed = true
+                // أضف أي حقول إضافية مخصصة موجودة لديك في كلاس AppUser هنا (مثل FirstName أو LastName)
+            };
+
+            // ضع كلمة مرور قوية تتوافق مع شروط Identity (أحرف كبيرة، صغيرة، أرقام، ورمز)
+            string adminPassword = "Admin@Password123";
+
+            var createAdminResult = await userManager.CreateAsync(newAdmin, adminPassword);
+
+            // 4. ربط المستخدم برول الـ Admin بعد نجاح إنشائه
+            if (createAdminResult.Succeeded)
+            {
+                await userManager.AddToRoleAsync(newAdmin, roleName);
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "حدث خطأ أثناء تهيئة قاعدة البيانات أو إنشاء حساب الـ Admin.");
+    }
+}
+
+app.Run(); // السطر الأخير الثابت في مشروعك
